@@ -1,24 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { initialize } from '@ramp-network/ramp-instant-sdk';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => initialize({ hostAppName: 'Test Dharma', swapAmount: '10', swapAsset: 'ETH', hostLogoUrl: 'http://localhost:8080/logo.png' }).show()}>Click me</button>
     </div>
   );
 }
