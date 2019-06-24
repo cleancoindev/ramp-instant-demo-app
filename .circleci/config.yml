@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  build_and_deploy:
+    description: Build & Deploy
+    docker:
+      - image: circleci/node
+    steps:
+      - run:
+          name: Build & Deploy
+          command: |
+            npx firebase-tools --token "$FIREBASE_TOKEN" use ramp-instant-demo
+
+            npm run build --target dev
+            npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-dev"
+
+            npm run build --target staging
+            npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging"
+
+            npm run build --target prod
+            npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-prod"
+
+workflows:
+  build_and_deploy:
+    jobs:
+      - build_and_deploy

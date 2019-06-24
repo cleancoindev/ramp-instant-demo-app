@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "ramp-instant-demo"
+  },
+  "targets": {
+    "ramp-instant-demo": {
+      "hosting": {
+        "ri-demo-dev": ["ri-demo-dev"],
+        "ri-demo-staging": ["ri-demo-staging"],
+        "ri-demo-prod": ["ri-demo-prod"]
+      }
+    }
+  }
+}
