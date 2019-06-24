@@ -16,15 +16,15 @@ jobs:
             npm install
             npx firebase-tools --token "$FIREBASE_TOKEN" use ramp-instant-demo
 
-            REACT_APP_URL=https://ri-widget-dev.firebaseapp.com/?hostAppName=Dharma%20DEV&hostLogoUrl=https://cdn-images-1.medium.com/fit/t/1600/480/0*3i0lZKwTZLNmvbwp.jpeg&swapAmount=150&userAddress=0xab5801a7d398351b8be11c439e05c5b3259aec9b&swapAsset=0x00000000000000000000000000
+            export REACT_APP_URL=https://ri-widget-dev.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-dev"
 
-            REACT_APP_URL=https://ri-widget-staging.firebaseapp.com/?hostAppName=Dharma%20STAGING&hostLogoUrl=https://cdn-images-1.medium.com/fit/t/1600/480/0*3i0lZKwTZLNmvbwp.jpeg&swapAmount=150&userAddress=0xab5801a7d398351b8be11c439e05c5b3259aec9b&swapAsset=0x00000000000000000000000000
+            export REACT_APP_URL=https://ri-widget-staging.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging"
 
-            REACT_APP_URL=https://ri-widget-prod.firebaseapp.com/?hostAppName=Dharma%20PROD&hostLogoUrl=https://cdn-images-1.medium.com/fit/t/1600/480/0*3i0lZKwTZLNmvbwp.jpeg&swapAmount=150&userAddress=0xab5801a7d398351b8be11c439e05c5b3259aec9b&swapAsset=0x00000000000000000000000000
+            export REACT_APP_URL=https://ri-widget-prod.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-prod"
 
