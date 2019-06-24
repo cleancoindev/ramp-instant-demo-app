@@ -10,6 +10,7 @@ jobs:
       - run:
           name: Build & Deploy
           command: |
+            npm install
             npx firebase-tools --token "$FIREBASE_TOKEN" use ramp-instant-demo
 
             npm run build --target dev
