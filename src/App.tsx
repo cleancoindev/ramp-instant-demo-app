@@ -10,6 +10,7 @@ const App: React.FC = () => {
           initialize({
             url: process.env.REACT_APP_URL,
             hostAppName: "Test Dharma",
+            userAddress: "0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58",
             swapAmount: "10",
             swapAsset: "ETH",
             hostLogoUrl: "http://localhost:8080/logo.png"
