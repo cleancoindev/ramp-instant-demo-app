@@ -11,6 +11,7 @@ const App: React.FC = () => {
         swapAsset: 'ETH',
         swapAmount: '1500000000000000000',
         userAddress: '0xab5801a7d398351b8be11c439e05c5b3259aec9b',
+        url: 'https://ri-widget-dev.firebaseapp.com/'
       }).show()}>Click me</button>
     </div>
   );
