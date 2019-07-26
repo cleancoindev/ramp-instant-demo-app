@@ -11,7 +11,7 @@ const App: React.FC = () => {
             hostAppName: "Maker DAO",
             hostLogoUrl:
               "https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png",
-            swapAmount: "100000000000000000", // 10 ** 17
+            swapAmount: "10000000000000000", // 10 ** 16 = 0.01 ETH
             swapAsset: "ETH",
             url: process.env.REACT_APP_URL,
             userAddress: "0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58"
@@ -27,8 +27,8 @@ const App: React.FC = () => {
             hostAppName: "Maker DAO",
             hostLogoUrl:
               "https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png",
-            swapAmount: "100000000000000000", // 10 ** 17
-            swapAsset: "0xDAI...",
+            swapAmount: "100000000000000000", // 10 ** 17 = 0.1 token
+            swapAsset: "DUMMY",
             url: process.env.REACT_APP_URL,
             userAddress: "0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58"
           }).show()
