@@ -7,31 +7,18 @@ const App: React.FC = () => {
   const [address, setAddress] = useState("0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58");
   const [amount, setAmount] = useState("10000000000000000"); // 10 ** 16 = 0.01 ETH
 
-  const [addressCandidate, setAddressCandidate] = useState(address);
-  const [amountCandidate, setAmountCandidate] = useState(amount);
-
-
   return (
     <div className="App">
-      <input value={addressCandidate} onInput={e => setAddressCandidate((e.target as HTMLInputElement).value)} />
+      Send to {" "}
+      <input value={address} onInput={e => setAddress((e.target as HTMLInputElement).value)} />
       <label>
-      {" "} -> {address}
+      {" "}
       </label>
       <br/>
-      <input value={amountCandidate} onInput={e => setAmountCandidate((e.target as HTMLInputElement).value)} />
-      {" "} -> {amount} wei
+      <input value={amount} onInput={e => setAmount((e.target as HTMLInputElement).value)} />
+      {" "} wei
       <label>
       </label>
-
-      <br/>
-      <button
-        onClick={() => {
-          setAddress(addressCandidate)
-          setAmount(amountCandidate)
-        }
-        }>
-        Save custom config
-      </button>
       <br />
 
       <button
