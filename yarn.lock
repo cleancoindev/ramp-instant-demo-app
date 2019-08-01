@@ -1095,10 +1095,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@ramp-network/ramp-instant-sdk@*":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@ramp-network/ramp-instant-sdk/-/ramp-instant-sdk-0.1.3.tgz#d736595fa4f1bbc7d5c084de649c397af5c5e0c9"
-  integrity sha512-/sRJCTUCgWuJC95F+dNvvrEVwUhyl6EJj4d44sUJ9V0NYX3AN2fqi1K0/84tjo0hZiCv9gAqhg+Jdcgr7ibluw==
+"@ramp-network/ramp-instant-sdk@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@ramp-network/ramp-instant-sdk/-/ramp-instant-sdk-1.0.0.tgz#da1f92244469d1e3b216770e1576e65551bd8a8d"
+  integrity sha512-aThKGoe/vr+QflqihjsViqCEGD7QZL+jOpNeCKp0NuxH40u3WpuA1PBbhWscQW/OvJ5MvBinvHAarIw1A/YQSQ==
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
