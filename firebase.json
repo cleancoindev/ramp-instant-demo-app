@@ -24,6 +24,17 @@
     },
     {
       "public": "build",
+      "target": "ri-demo-staging-ropsten",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "public": "build",
       "target": "ri-demo-prod",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [

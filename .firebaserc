@@ -7,6 +7,7 @@
       "hosting": {
         "ri-demo-dev": ["ri-demo-dev"],
         "ri-demo-staging": ["ri-demo-staging"],
+        "ri-demo-staging-ropsten": ["ri-demo-staging-ropsten"],
         "ri-demo-prod": ["ri-demo-prod"]
       }
     }
