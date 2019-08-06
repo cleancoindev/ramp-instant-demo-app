@@ -8,6 +8,8 @@
         "ri-demo-dev": ["ri-demo-dev"],
         "ri-demo-staging": ["ri-demo-staging"],
         "ri-demo-staging-ropsten": ["ri-demo-staging-ropsten"],
+        "ri-demo-staging-kovan": ["ri-demo-staging-kovan"],
+        "ri-demo-staging-gorli": ["ri-demo-staging-gorli"],
         "ri-demo-prod": ["ri-demo-prod"]
       }
     }

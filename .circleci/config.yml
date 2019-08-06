@@ -28,6 +28,14 @@ jobs:
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging-ropsten"
 
+            export REACT_APP_URL=https://ri-widget-staging-kovan.firebaseapp.com/
+            npm run build
+            npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging-kovan"
+
+            export REACT_APP_URL=https://ri-widget-staging-gorli.firebaseapp.com/
+            npm run build
+            npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging-gorli"
+
             export REACT_APP_URL=https://ri-widget-prod.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-prod"
