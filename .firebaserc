@@ -9,7 +9,7 @@
         "ri-demo-staging": ["ri-demo-staging"],
         "ri-demo-staging-ropsten": ["ri-demo-staging-ropsten"],
         "ri-demo-staging-kovan": ["ri-demo-staging-kovan"],
-        "ri-demo-staging-gorli": ["ri-demo-staging-gorli"],
+        "ri-demo-staging-goerli": ["ri-demo-staging-goerli"],
         "ri-demo-prod": ["ri-demo-prod"]
       }
     }

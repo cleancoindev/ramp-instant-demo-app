@@ -46,7 +46,7 @@
     },
     {
       "public": "build",
-      "target": "ri-demo-staging-gorli",
+      "target": "ri-demo-staging-goerli",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {

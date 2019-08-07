@@ -32,9 +32,9 @@ jobs:
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging-kovan"
 
-            export REACT_APP_URL=https://ri-widget-staging-gorli.firebaseapp.com/
+            export REACT_APP_URL=https://ri-widget-staging-goerli.firebaseapp.com/
             npm run build
-            npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging-gorli"
+            npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging-goerli"
 
             export REACT_APP_URL=https://ri-widget-prod.firebaseapp.com/
             npm run build
