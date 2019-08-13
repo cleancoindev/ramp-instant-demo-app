@@ -16,26 +16,32 @@ jobs:
             npm install
             npx firebase-tools --token "$FIREBASE_TOKEN" use ramp-instant-demo
 
+            export REACT_APP_TOKEN_NAME=DUMMY
             export REACT_APP_URL=https://ri-widget-dev.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-dev"
 
+            export REACT_APP_TOKEN_NAME=DUMMY
             export REACT_APP_URL=https://ri-widget-staging.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging"
 
+            export REACT_APP_TOKEN_NAME=DUMMY
             export REACT_APP_URL=https://ri-widget-staging-ropsten.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging-ropsten"
 
+            export REACT_APP_TOKEN_NAME=DUMMY
             export REACT_APP_URL=https://ri-widget-staging-kovan.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging-kovan"
 
+            export REACT_APP_TOKEN_NAME=DUMMY
             export REACT_APP_URL=https://ri-widget-staging-goerli.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging-goerli"
 
+            export REACT_APP_TOKEN_NAME=DAI
             export REACT_APP_URL=https://ri-widget-prod.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-prod"
