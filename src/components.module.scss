@@ -1,0 +1,76 @@
+.betaBanner {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  background: #ff7300;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.heading {
+  text-align: center;
+  margin: 0 auto 30px;
+  font-size: 28px;
+}
+
+.label {
+  text-align: left;
+  font-size: 13px;
+  margin: 10px auto;
+}
+
+.input {
+  box-shadow: 1px 3px 5px 0 rgba(50, 50, 50, 0.1);
+  border: 1px solid transparent;
+  padding: 16px;
+  display: block;
+  border-radius: 6px;
+  margin: 6px auto 10px;
+  width: 300px;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 350px;
+  background: #fff;
+  padding: 30px;
+  border: 20px;
+  border-radius: 6px;
+  box-shadow: 1px 3px 5px 0 rgba(50, 50, 50, 0.1);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 330px;
+  margin: 20px auto 0;
+}
+
+.assetButtonContainer {
+  margin: 0 0 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  display: block;
+  width: 150px;
+  background: #3ECF8E;
+  border: none;
+  border-radius: 6px;
+  padding: 15px;
+  flex: 0 1 auto;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 1px 3px 5px 0 rgba(50, 50, 50, 0.1);
+  cursor: pointer;
+}
