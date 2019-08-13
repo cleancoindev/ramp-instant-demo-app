@@ -1,19 +1,12 @@
-import React, { useState, useMemo } from "react";
-import "./App.css";
 import { RampInstantSDK } from "@ramp-network/ramp-instant-sdk";
+import React, { useMemo, useState } from "react";
+import "./App.css";
 import { BetaBanner, Code } from "./components";
 import styles from "./components.module.scss";
-import { Decimal } from "decimal.js-light";
-import { generateIntegrationCode } from './helpers';
-
-function convertIntStringToWeiString(amount: string): string {
-  try {
-    const multiplier = new Decimal(10).pow(18);
-    return new Decimal(amount).times(multiplier).toString();
-  } catch (e) {
-    return '0';
-  }
-}
+import {
+  convertIntStringToWeiString,
+  generateIntegrationCode,
+} from "./helpers";
 
 const tokenName = process.env.REACT_APP_TOKEN_NAME;
 
@@ -50,11 +43,15 @@ const App: React.FC = () => {
       .show();
   };
 
-  const sampleCode = useMemo(() => generateIntegrationCode({
-    swapAmount: convertIntStringToWeiString(amount || '0'),
-    swapAsset: asset,
-    userAddress: address,
-  }), [amount, asset, address]);
+  const sampleCode = useMemo(
+    () =>
+      generateIntegrationCode({
+        swapAmount: convertIntStringToWeiString(amount || "0"),
+        swapAsset: asset,
+        userAddress: address,
+      }),
+    [amount, asset, address],
+  );
 
   return (
     <div className="App">
@@ -124,6 +121,11 @@ const App: React.FC = () => {
               Buy with Ramp Instant
             </button>
           </div>
+
+          <footer style={{ marginTop: 'auto', width: '100%', textAlign: 'left', fontSize: '13px', lineHeight: '23px' }}>
+            <span style={{ display: 'block' }}>Check out the npm package <a href="https://www.npmjs.com/package/@ramp-network/ramp-instant-sdk">here</a>.</span>
+            <span>Join us on Discord <a href="https://discord.gg/zqvFPTB">here</a>.</span>
+          </footer>
         </div>
         <Code code={sampleCode} />
       </div>

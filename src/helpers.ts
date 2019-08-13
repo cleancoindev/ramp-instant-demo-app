@@ -1,3 +1,5 @@
+import Decimal from 'decimal.js-light';
+
 interface ICodeGenProps {
   swapAmount: string;
   swapAsset: string;
@@ -19,4 +21,13 @@ new RampInstantSDK({
   .on('*', console.log)
   .show();
   `.trim();
+}
+
+export function convertIntStringToWeiString(amount: string): string {
+  try {
+    const multiplier = new Decimal(10).pow(18);
+    return new Decimal(amount).times(multiplier).toString();
+  } catch (e) {
+    return '0';
+  }
 }
