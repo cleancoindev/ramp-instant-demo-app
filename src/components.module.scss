@@ -1,0 +1,105 @@
+.betaBanner {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  background: #ff7300;
+  color: #fff;
+}
+
+.heading {
+  text-align: center;
+  margin: 0 auto 30px;
+  font-size: 28px;
+}
+
+.label {
+  text-align: left;
+  font-size: 13px;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.input {
+  box-shadow: 1px 3px 5px 0 rgba(50, 50, 50, 0.1);
+  border: 1px solid transparent;
+  padding: 16px;
+  display: block;
+  border-radius: 6px;
+  margin: 6px 0 10px;
+  width: 100%;
+}
+
+.formContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0 1 435px;
+
+  height: 100%;
+  width: 435px;
+  background: #fff;
+  padding: 30px;
+  border: 20px;
+  border-radius: 6px;
+  box-shadow: 1px 3px 5px 0 rgba(50, 50, 50, 0.1);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto 0;
+}
+
+.button {
+  display: block;
+  min-width: 200px;
+  background: #3ECF8E;
+  border: none;
+  border-radius: 6px;
+  padding: 15px;
+  flex: 0 1 auto;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 1px 3px 5px 0 rgba(50, 50, 50, 0.1);
+  cursor: pointer;
+}
+
+.radio {
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.pre {
+  height: 100%;
+  overflow: auto;
+  text-align: left;
+  flex: 1 0;
+  margin: 0;
+  padding: 8px;
+
+  & .token-line {
+    line-height: 21px;
+    height: 21px;
+  }
+}
+
+.lineNumber {
+  display: inline-block;
+  width: 32px;
+  user-select: none;
+  opacity: 0.3;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  // 100vh - betabanner height
+  height: calc(100vh - 49px);
+}
