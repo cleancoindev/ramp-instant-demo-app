@@ -1,23 +1,19 @@
-import { RampInstantSDK } from "@ramp-network/ramp-instant-sdk";
-import React, { useMemo, useState } from "react";
-import "./App.css";
-import { BetaBanner, Code } from "./components";
-import styles from "./components.module.scss";
-import {
-  convertIntStringToWeiString,
-  generateIntegrationCode,
-} from "./helpers";
+import { RampInstantSDK } from '@ramp-network/ramp-instant-sdk';
+import React, { useMemo, useState } from 'react';
+import './App.css';
+import { BetaBanner, Code } from './components';
+import styles from './components.module.scss';
+import { convertIntStringToWeiString, generateIntegrationCode } from './helpers';
+import { ReactComponent as RampLogo } from './ramp.svg';
 
 const tokenName = process.env.REACT_APP_TOKEN_NAME;
 
 const App: React.FC = () => {
-  const [address, setAddress] = useState(
-    "0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58",
-  );
+  const [address, setAddress] = useState('0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58');
 
-  const [amount, setAmount] = useState("1");
+  const [amount, setAmount] = useState('1');
 
-  const [asset, setAsset] = useState<string>("ETH");
+  const [asset, setAsset] = useState<string>('ETH');
 
   const handleSubmitButtonClick = () => {
     let weiAmount: string;
@@ -25,27 +21,26 @@ const App: React.FC = () => {
     try {
       weiAmount = convertIntStringToWeiString(amount);
     } catch (e) {
-      alert("Supplied amount is not a valid number");
+      alert('Supplied amount is not a valid number');
       return;
     }
 
     new RampInstantSDK({
-      hostAppName: "Maker DAO",
-      hostLogoUrl:
-        "https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png",
+      hostAppName: 'Maker DAO',
+      hostLogoUrl: 'https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png',
       swapAmount: weiAmount,
       swapAsset: asset,
       url: process.env.REACT_APP_URL,
       userAddress: address,
     })
-      .on("*", console.log)
+      .on('*', console.log)
       .show();
   };
 
   const sampleCode = useMemo(
     () =>
       generateIntegrationCode({
-        swapAmount: convertIntStringToWeiString(amount || "0"),
+        swapAmount: convertIntStringToWeiString(amount || '0'),
         swapAsset: asset,
         userAddress: address,
       }),
@@ -57,14 +52,15 @@ const App: React.FC = () => {
       <BetaBanner />
       <div className={styles.container}>
         <div className={styles.formContainer}>
-          <h1 className={styles.heading}>Ramp Instant Demo</h1>
+          <h1 className={styles.heading}>Try Ramp Instant</h1>
+          <RampLogo style={{ height: '50px', marginBottom: '30px' }} />
 
           <label className={styles.label}>
             Buyer's ETH address:
             <input
               className={styles.input}
               value={address}
-              onChange={e => setAddress((e.target as HTMLInputElement).value)}
+              onChange={(e) => setAddress((e.target as HTMLInputElement).value)}
             />
           </label>
 
@@ -73,34 +69,26 @@ const App: React.FC = () => {
             <input
               className={styles.input}
               value={amount}
-              onChange={e => setAmount((e.target as HTMLInputElement).value)}
+              onChange={(e) => setAmount((e.target as HTMLInputElement).value)}
             />
           </label>
 
           <div className={styles.label}>
             Asset:
             <div className={styles.assetRadioContainer}>
-              <label
-                className={styles.label}
-                style={{ display: "block" }}
-                htmlFor="ethRadio"
-              >
+              <label className={styles.label} style={{ display: 'block' }} htmlFor="ethRadio">
                 <input
                   type="radio"
                   className={styles.radio}
                   name="asset"
                   value="ETH"
-                  onChange={() => setAsset("ETH")}
-                  checked={asset === "ETH"}
+                  onChange={() => setAsset('ETH')}
+                  checked={asset === 'ETH'}
                   id="ethRadio"
                 />
                 ETH
               </label>
-              <label
-                className={styles.label}
-                style={{ display: "block" }}
-                htmlFor="tokenRadio"
-              >
+              <label className={styles.label} style={{ display: 'block' }} htmlFor="tokenRadio">
                 <input
                   type="radio"
                   className={styles.radio}
@@ -121,9 +109,13 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          <footer style={{ marginTop: 'auto', width: '100%', textAlign: 'left', fontSize: '13px', lineHeight: '23px' }}>
-            <span style={{ display: 'block' }}>Check out the npm package <a href="https://www.npmjs.com/package/@ramp-network/ramp-instant-sdk">here</a>.</span>
-            <span>Join us on Discord <a href="https://discord.gg/zqvFPTB">here</a>.</span>
+          <footer style={{ marginTop: 'auto', width: '100%', textAlign: 'left', fontSize: '16px', lineHeight: '23px' }}>
+            <span style={{ display: 'block' }}>
+              Check out the npm package <a href="https://www.npmjs.com/package/@ramp-network/ramp-instant-sdk">here</a>.
+            </span>
+            <span>
+              Join us on Discord <a href="https://discord.gg/zqvFPTB">here</a>.
+            </span>
           </footer>
         </div>
         <Code code={sampleCode} />
