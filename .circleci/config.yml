@@ -17,13 +17,13 @@ jobs:
             npx firebase-tools --token "$FIREBASE_TOKEN" use ramp-instant-demo
 
             export REACT_APP_NETWORK_NAME=Rinkeby
-            export REACT_APP_TOKEN_NAME=DUMMY token
+            export REACT_APP_TOKEN_NAME=DUMMY
             export REACT_APP_URL=https://ri-widget-dev.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-dev"
 
             export REACT_APP_NETWORK_NAME=Rinkeby
-            export REACT_APP_TOKEN_NAME=DUMMY
+            export REACT_APP_TOKEN_NAME=TEST
             export REACT_APP_URL=https://ri-widget-staging.firebaseapp.com/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging"
