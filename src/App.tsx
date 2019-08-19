@@ -4,9 +4,10 @@ import './App.css';
 import { BetaBanner, Code } from './components';
 import styles from './components.module.scss';
 import { convertIntStringToWeiString, generateIntegrationCode } from './helpers';
-import { ReactComponent as RampLogo } from './ramp.svg';
+import { ReactComponent as RampLogo } from './ramp_logo_plain.svg';
 
 const tokenName = process.env.REACT_APP_TOKEN_NAME;
+const currentNetwork = process.env.REACT_APP_NETWORK_NAME;
 
 const App: React.FC = () => {
   const [address, setAddress] = useState('0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58');
@@ -73,6 +74,17 @@ const App: React.FC = () => {
             />
           </label>
 
+          <label className={styles.label}>
+            Network:
+            <select
+              disabled
+              className={styles.input}
+              onChange={() => {}}
+            >
+               <option value={currentNetwork}>{currentNetwork}</option>
+            </select>
+          </label>
+
           <div className={styles.label}>
             Asset:
             <div className={styles.assetRadioContainer}>
@@ -86,7 +98,7 @@ const App: React.FC = () => {
                   checked={asset === 'ETH'}
                   id="ethRadio"
                 />
-                ETH
+                {currentNetwork === 'mainnet' ? '' : currentNetwork+' '}ETH
               </label>
               <label className={styles.label} style={{ display: 'block' }} htmlFor="tokenRadio">
                 <input
@@ -98,7 +110,7 @@ const App: React.FC = () => {
                   checked={asset === tokenName}
                   id="tokenRadio"
                 />
-                {tokenName}
+                {tokenName} token
               </label>
             </div>
           </div>
