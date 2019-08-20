@@ -16,7 +16,7 @@ const currentNetwork = process.env.REACT_APP_NETWORK_NAME;
 const App: React.FC = () => {
   const [address, setAddress] = useState('0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58');
 
-  const [amount, setAmount] = useState('1');
+  const [amount, setAmount] = useState('0.01');
 
   const [asset, setAsset] = useState<string>('ETH');
 
