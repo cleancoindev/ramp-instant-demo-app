@@ -88,7 +88,7 @@ const App: React.FC = () => {
           <p className={styles.description}>
             Testers - this is the demo version of the widget. You can buy{' '}
             {currentNetwork === 'mainnet' ? '' : currentNetwork + ' '} Ether with GBP to experience
-            the flow and test the settlement.
+            the flow and feel the breeze of Open Banking.
           </p>
           <p className={styles.description}>
             This works best on desktop, but feel free to give it a go on mobile.
