@@ -41,7 +41,7 @@
   justify-content: flex-start;
   align-items: center;
   flex: 0 1 435px;
-
+  overflow-y: auto;
   height: 100%;
   width: 435px;
   background: #fff;
@@ -72,6 +72,7 @@
   font-weight: 600;
   box-shadow: 1px 3px 5px 0 rgba(50, 50, 50, 0.1);
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .radio {
