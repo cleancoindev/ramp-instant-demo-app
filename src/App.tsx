@@ -3,8 +3,12 @@ import React, { useMemo, useState } from 'react';
 import './App.css';
 import { BetaBanner, Code } from './components';
 import styles from './components.module.scss';
-import { convertIntStringToWeiString, generateIntegrationCode } from './helpers';
-import { ReactComponent as RampLogo } from './ramp_logo_plain.svg';
+import {
+  convertIntStringToWeiString,
+  generateIntegrationCode,
+  isAmountBelowSafeLimits
+} from './helpers';
+import { ReactComponent as RampLogo } from './ramp-instant-logo.svg';
 
 const tokenName = process.env.REACT_APP_TOKEN_NAME;
 const currentNetwork = process.env.REACT_APP_NETWORK_NAME;
@@ -26,13 +30,20 @@ const App: React.FC = () => {
       return;
     }
 
+    if (!isAmountBelowSafeLimits(weiAmount, asset !== 'ETH')) {
+      alert(
+        'This demo app only supports transactions up to roughly 2 GBP (0.01 ETH / 2 TEST tokens).'
+      );
+      return;
+    }
+
     new RampInstantSDK({
       hostAppName: 'Maker DAO',
       hostLogoUrl: 'https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png',
       swapAmount: weiAmount,
       swapAsset: asset,
       url: process.env.REACT_APP_URL,
-      userAddress: address,
+      userAddress: address
     })
       .on('*', console.log)
       .show();
@@ -43,9 +54,9 @@ const App: React.FC = () => {
       generateIntegrationCode({
         swapAmount: convertIntStringToWeiString(amount || '0'),
         swapAsset: asset,
-        userAddress: address,
+        userAddress: address
       }),
-    [amount, asset, address],
+    [amount, asset, address]
   );
 
   return (
@@ -53,15 +64,42 @@ const App: React.FC = () => {
       <BetaBanner />
       <div className={styles.container}>
         <div className={styles.formContainer}>
+          <a
+            href="https://instant.ramp.network/"
+            style={{
+              textDecoration: 'none',
+              alignSelf: 'flex-start',
+              display: 'block',
+              width: '100%',
+              textAlign: 'left'
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <RampLogo style={{ height: '30px', marginBottom: '20px', width: 'auto' }} />
+          </a>
+
           <h1 className={styles.heading}>Try Ramp Instant</h1>
-          <RampLogo style={{ height: '50px', marginBottom: '30px' }} />
+
+          <p className={styles.description}>
+            Developers - look right. That’s the code to your own onramp. Paste it into your codebase
+            and let your users buy crypto with Ramp!
+          </p>
+          <p className={styles.description}>
+            Testers - this is the demo version of the widget. You can buy{' '}
+            {currentNetwork === 'mainnet' ? '' : currentNetwork + ' '} Ether with GBP to experience
+            the flow and test the settlement.
+          </p>
+          <p className={styles.description}>
+            This works best on desktop, but feel free to give it a go on mobile.
+          </p>
 
           <label className={styles.label}>
             Buyer's ETH address:
             <input
               className={styles.input}
               value={address}
-              onChange={(e) => setAddress((e.target as HTMLInputElement).value)}
+              onChange={e => setAddress((e.target as HTMLInputElement).value)}
             />
           </label>
 
@@ -70,18 +108,14 @@ const App: React.FC = () => {
             <input
               className={styles.input}
               value={amount}
-              onChange={(e) => setAmount((e.target as HTMLInputElement).value)}
+              onChange={e => setAmount((e.target as HTMLInputElement).value)}
             />
           </label>
 
           <label className={styles.label}>
             Network:
-            <select
-              disabled
-              className={styles.input}
-              onChange={() => {}}
-            >
-               <option value={currentNetwork}>{currentNetwork}</option>
+            <select disabled className={styles.input} onChange={() => {}}>
+              <option value={currentNetwork}>{currentNetwork}</option>
             </select>
           </label>
 
@@ -98,7 +132,7 @@ const App: React.FC = () => {
                   checked={asset === 'ETH'}
                   id="ethRadio"
                 />
-                {currentNetwork === 'mainnet' ? '' : currentNetwork+' '}ETH
+                {currentNetwork === 'mainnet' ? '' : currentNetwork + ' '}ETH
               </label>
               <label className={styles.label} style={{ display: 'block' }} htmlFor="tokenRadio">
                 <input
@@ -121,9 +155,18 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          <footer style={{ marginTop: 'auto', width: '100%', textAlign: 'left', fontSize: '16px', lineHeight: '23px' }}>
+          <footer
+            style={{
+              marginTop: 'auto',
+              width: '100%',
+              textAlign: 'left',
+              fontSize: '16px',
+              lineHeight: '23px'
+            }}
+          >
             <span style={{ display: 'block' }}>
-              Check out the npm package <a href="https://www.npmjs.com/package/@ramp-network/ramp-instant-sdk">here</a>.
+              Check out the npm package{' '}
+              <a href="https://www.npmjs.com/package/@ramp-network/ramp-instant-sdk">here</a>.
             </span>
             <span>
               Join us on Discord <a href="https://discord.gg/zqvFPTB">here</a>.
