@@ -48,7 +48,7 @@ jobs:
 
             export REACT_APP_NETWORK_NAME=mainnet
             export REACT_APP_TOKEN_NAME=DAI
-            export REACT_APP_URL=https://ri-widget-prod.firebaseapp.com/
+            export REACT_APP_URL=https://widget-instant.ramp.network/
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-prod"
 
