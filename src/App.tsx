@@ -9,7 +9,6 @@ import {
   isAmountBelowSafeLimits
 } from './helpers';
 import { ReactComponent as RampLogo } from './ramp-instant-logo.svg';
-import { WidgetVariantTypes } from '@ramp-network/ramp-instant-sdk/dist/types/types';
 
 const tokenName = process.env.REACT_APP_TOKEN_NAME;
 const currentNetwork = process.env.REACT_APP_NETWORK_NAME;
@@ -46,7 +45,7 @@ const App: React.FC = () => {
       swapAsset: asset,
       url: 'http://localhost:8080',
       userAddress: address,
-      variant: appInstance && appInstance === 'DEV' ? 'auto' : WidgetVariantTypes.DESKTOP,
+      variant: appInstance && appInstance === 'DEV' ? 'auto' : 'desktop',
     })
       .on('*', console.log)
       .show();
