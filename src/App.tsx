@@ -9,9 +9,11 @@ import {
   isAmountBelowSafeLimits
 } from './helpers';
 import { ReactComponent as RampLogo } from './ramp-instant-logo.svg';
+import { WidgetVariantTypes } from '@ramp-network/ramp-instant-sdk/dist/types/types';
 
 const tokenName = process.env.REACT_APP_TOKEN_NAME;
 const currentNetwork = process.env.REACT_APP_NETWORK_NAME;
+const appInstance = process.env.REACT_APP_DEMO_APP_INSTANCE;
 
 const App: React.FC = () => {
   const [address, setAddress] = useState('0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58');
@@ -42,8 +44,9 @@ const App: React.FC = () => {
       hostLogoUrl: 'https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png',
       swapAmount: weiAmount,
       swapAsset: asset,
-      url: process.env.REACT_APP_URL,
-      userAddress: address
+      url: 'http://localhost:8080',
+      userAddress: address,
+      variant: appInstance && appInstance === 'DEV' ? 'auto' : WidgetVariantTypes.DESKTOP,
     })
       .on('*', console.log)
       .show();
