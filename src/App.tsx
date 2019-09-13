@@ -43,7 +43,7 @@ const App: React.FC = () => {
       hostLogoUrl: 'https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png',
       swapAmount: weiAmount,
       swapAsset: asset,
-      url: 'http://localhost:8080',
+      url: process.env.REACT_APP_URL,
       userAddress: address,
       variant: appInstance && appInstance === 'DEV' ? 'auto' : 'desktop',
     })
