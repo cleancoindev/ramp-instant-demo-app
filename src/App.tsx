@@ -45,7 +45,7 @@ const App: React.FC = () => {
       swapAsset: asset,
       url: process.env.REACT_APP_URL,
       userAddress: address,
-      variant: appInstance && appInstance === 'DEV' ? 'auto' : 'desktop',
+      variant: appInstance && appInstance !== 'PROD' ? 'auto' : 'desktop',
     })
       .on('*', console.log)
       .show();
