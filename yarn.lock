@@ -1096,9 +1096,11 @@
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
 "@ramp-network/ramp-instant-sdk@^1.0.0":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@ramp-network/ramp-instant-sdk/-/ramp-instant-sdk-1.1.2.tgz#65268bc45b47dc3442f52a31b22a5b4bc14fc4ef"
-  integrity sha512-/rqmFg0MvilTVW6DmFTiGEAJZxwEgZe7zHspOSZL1wiWH5vSR+keEdFwgKvgvhe61qqX5mhN+kJh0ZXvUfyzlg==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ramp-network/ramp-instant-sdk/-/ramp-instant-sdk-1.2.0.tgz#8b013c535c36e20bb8a0c5c76090be31f2192898"
+  integrity sha512-oQ8vB37sdofnBYv12q4yF3GiVxcQOI68KCLqDVSStPemfWC+VoJf7MMEzVoaY8zZH8b4L40MtHBMuc6JFEOwhg==
+  dependencies:
+    body-scroll-lock "^2.6.4"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
@@ -2115,6 +2117,11 @@ body-parser@1.18.3:
     qs "6.5.2"
     raw-body "2.3.3"
     type-is "~1.6.16"
+
+body-scroll-lock@^2.6.4:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-2.6.4.tgz#567abc60ef4d656a79156781771398ef40462e94"
+  integrity sha512-NP08WsovlmxEoZP9pdlqrE+AhNaivlTrz9a0FF37BQsnOrpN48eNqivKkE7SYpM9N+YIPjsdVzfLAUQDBm6OQw==
 
 bonjour@^3.5.0:
   version "3.5.0"
