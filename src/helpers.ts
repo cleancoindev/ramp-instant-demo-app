@@ -16,7 +16,11 @@ new RampInstantSDK({
   swapAmount: '${codeParams.swapAmount}',
   swapAsset: '${codeParams.swapAsset}',
   userAddress: '${codeParams.userAddress}',
-  url: '${process.env.REACT_APP_URL}', // only specify the url if you want to use testnet widget versions
+  url: '${process.env.REACT_APP_URL}', // only specify the url if you want to use testnet widget versions,
+  // use variant: 'auto' for automatic mobile / desktop handling, 
+  // 'mobile' to force mobile version
+  // 'desktop' to force desktop version (default)
+  variant: 'auto',
 })
   .on('*', console.log)
   .show();

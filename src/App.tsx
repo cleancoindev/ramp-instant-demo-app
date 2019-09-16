@@ -12,7 +12,6 @@ import { ReactComponent as RampLogo } from './ramp-instant-logo.svg';
 
 const tokenName = process.env.REACT_APP_TOKEN_NAME;
 const currentNetwork = process.env.REACT_APP_NETWORK_NAME;
-const appInstance = process.env.REACT_APP_DEMO_APP_INSTANCE;
 
 const App: React.FC = () => {
   const [address, setAddress] = useState('0xe2E0256d6785d49eC7BadCD1D44aDBD3F6B0Ab58');
@@ -45,7 +44,7 @@ const App: React.FC = () => {
       swapAsset: asset,
       url: process.env.REACT_APP_URL,
       userAddress: address,
-      variant: appInstance && appInstance !== 'PROD' ? 'auto' : 'desktop',
+      variant: 'auto',
     })
       .on('*', console.log)
       .show();
