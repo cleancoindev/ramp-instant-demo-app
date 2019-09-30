@@ -36,13 +36,17 @@ const App: React.FC = () => {
       );
       return;
     }
-
+    console.log(process.env.REACT_APP_DEMO_APP_INSTANCE)
+    console.log('process.env.REACT_APP_URL:')
+    console.log(process.env.REACT_APP_URL)
+    const REACT_APP_URL='https://ri-widget-dev.firebaseapp.com/'
     new RampInstantSDK({
       hostAppName: 'Maker DAO',
       hostLogoUrl: 'https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png',
-      swapAmount: weiAmount,
-      swapAsset: asset,
-      url: process.env.REACT_APP_URL,
+      // swapAmount: weiAmount,
+      // swapAsset: asset,
+      url: REACT_APP_URL,
+      // url: process.env.REACT_APP_URL,
       userAddress: address,
       variant: 'auto',
     })
