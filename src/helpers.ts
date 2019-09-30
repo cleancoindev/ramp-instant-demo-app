@@ -48,9 +48,3 @@ export function convertIntStringToWeiString(amount: string): string {
     return '0';
   }
 }
-
-export function isAmountBelowSafeLimits(amount: string, isToken: boolean): boolean {
-  const limit = new Decimal((!isToken ? '10000000000000000' : '2000000000000000000') + '0000');
-
-  return new Decimal(amount).lte(limit);
-}

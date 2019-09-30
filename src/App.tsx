@@ -5,8 +5,7 @@ import { BetaBanner, Code } from "./components";
 import styles from "./components.module.scss";
 import {
   convertIntStringToWeiString,
-  generateIntegrationCode,
-  isAmountBelowSafeLimits
+  generateIntegrationCode
 } from "./helpers";
 import { ReactComponent as RampLogo } from "./ramp-instant-logo.svg";
 
@@ -44,12 +43,6 @@ const App: React.FC = () => {
       return;
     }
 
-    if (!isAmountBelowSafeLimits(weiAmount, asset !== "ETH")) {
-      alert(
-        "This demo app only supports transactions up to roughly 2 GBP (0.01 ETH / 2 TEST tokens)."
-      );
-      return;
-    }
     new RampInstantSDK({
       hostAppName: "Maker DAO",
       hostLogoUrl:
