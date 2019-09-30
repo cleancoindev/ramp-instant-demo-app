@@ -10,6 +10,19 @@ export function generateIntegrationCode(codeParams: ICodeGenProps): string {
   return `
 import { RampInstantSDK } from '@ramp-network/ramp-instant-sdk';
 
+/*
+ *  Quick Integration
+ */
+new RampInstantSDK({
+  hostAppName: 'Maker DAO',
+  hostLogoUrl: 'https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png',
+  variant: 'auto',
+}).show();
+
+
+/*
+ *  Advanced Integration
+ */
 new RampInstantSDK({
   hostAppName: 'Maker DAO',
   hostLogoUrl: 'https://cdn-images-1.medium.com/max/2600/1*nqtMwugX7TtpcS-5c3lRjw.png',
@@ -17,7 +30,7 @@ new RampInstantSDK({
   swapAsset: '${codeParams.swapAsset}',
   userAddress: '${codeParams.userAddress}',
   url: '${process.env.REACT_APP_URL}', // only specify the url if you want to use testnet widget versions,
-  // use variant: 'auto' for automatic mobile / desktop handling, 
+  // use variant: 'auto' for automatic mobile / desktop handling,
   // 'mobile' to force mobile version
   // 'desktop' to force desktop version (default)
   variant: 'auto',
@@ -37,7 +50,7 @@ export function convertIntStringToWeiString(amount: string): string {
 }
 
 export function isAmountBelowSafeLimits(amount: string, isToken: boolean): boolean {
-  const limit = new Decimal(!isToken ? '10000000000000000' : '2000000000000000000'+'0000');
+  const limit = new Decimal((!isToken ? '10000000000000000' : '2000000000000000000') + '0000');
 
   return new Decimal(amount).lte(limit);
 }
