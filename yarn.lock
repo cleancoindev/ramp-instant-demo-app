@@ -1262,10 +1262,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@ramp-network/ramp-instant-sdk@^1.5.2":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@ramp-network/ramp-instant-sdk/-/ramp-instant-sdk-1.5.2.tgz#2e0fa9a8be84b0912e5dc2fc4955f405c12302ed"
-  integrity sha512-nRsy8wf4gE1aA+ED5dea1ZZPWgAs/LhhrELmhTvbFNnwBaEukvBFjV0B6QyC1tvz7m31bUQcrY7B4cfvXjCHWw==
+"@ramp-network/ramp-instant-sdk@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@ramp-network/ramp-instant-sdk/-/ramp-instant-sdk-1.6.0.tgz#4550ee6854085ad5371ffd88d18a493758ffd82b"
+  integrity sha512-2EMmnz/9RcQZqwy0k2w/DtZKo/j2lLjXALCULPmQEgRH7a4gGhLq+hjzpMtL1AlawFc6JlqCmSaUkrCF5YfLaw==
   dependencies:
     body-scroll-lock "^2.6.4"
 
