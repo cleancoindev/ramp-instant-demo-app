@@ -20,6 +20,7 @@ jobs:
             export REACT_APP_NETWORK_NAME=Rinkeby
             export REACT_APP_TOKEN_NAME=DUMMY
             export REACT_APP_URL=https://ri-widget-dev.firebaseapp.com/
+            export REACT_APP_REFUNDED_FEES_API_TOKEN=cwftrxqch5239yzjcr7hbspmhh8obuz3jgdqxwog
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-dev"
 
@@ -27,6 +28,7 @@ jobs:
             export REACT_APP_NETWORK_NAME=Rinkeby
             export REACT_APP_TOKEN_NAME=TEST
             export REACT_APP_URL=https://ri-widget-staging.firebaseapp.com/
+            export REACT_APP_REFUNDED_FEES_API_TOKEN=j4z5gn7eh7uvbdgpd7c7wgkq4msuqrgs4xq4jutv
             npm run build
             npx firebase-tools --token "$FIREBASE_TOKEN" deploy --only "hosting:ri-demo-staging"
 
