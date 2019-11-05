@@ -4,9 +4,12 @@ interface ICodeGenProps {
   swapAmount: string;
   swapAsset: string;
   userAddress: string;
+  useRefundedFees: boolean;
 }
 
 export function generateIntegrationCode(codeParams: ICodeGenProps): string {
+  const token = getHostTokenForRefundedFees(codeParams.useRefundedFees);
+
   return `
 import { RampInstantSDK } from '@ramp-network/ramp-instant-sdk';
 
@@ -34,6 +37,7 @@ new RampInstantSDK({
   // 'mobile' to force mobile version
   // 'desktop' to force desktop version (default)
   variant: 'auto',
+  ${token ? `hostApiKey: '${token}',`: ''}
 })
   .on('*', console.log)
   .show();
@@ -47,4 +51,10 @@ export function convertIntStringToWeiString(amount: string): string {
   } catch (e) {
     return '0';
   }
+}
+
+export function getHostTokenForRefundedFees(useRefundedFees: boolean): string | null {
+  const refundedFeesApiToken = process.env.REACT_APP_REFUNDED_FEES_API_TOKEN;
+
+  return !useRefundedFees || !refundedFeesApiToken ? null : refundedFeesApiToken;
 }
