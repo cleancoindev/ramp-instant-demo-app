@@ -8,8 +8,6 @@ interface ICodeGenProps {
 }
 
 export function generateIntegrationCode(codeParams: ICodeGenProps): string {
-  const token = getHostTokenForRefundedFees(codeParams.useRefundedFees);
-
   return `
 import { RampInstantSDK } from '@ramp-network/ramp-instant-sdk';
 
@@ -36,12 +34,25 @@ new RampInstantSDK({
   // use variant: 'auto' for automatic mobile / desktop handling,
   // 'mobile' to force mobile version
   // 'desktop' to force desktop version (default)
-  variant: 'auto',
-  ${token ? `hostApiKey: '${token}',`: ''}
+  variant: 'auto', ${getHostTokenOrCopy(codeParams.useRefundedFees)}
 })
   .on('*', console.log)
   .show();
   `.trim();
+}
+
+function getHostTokenOrCopy(useRefundedFees: boolean): string {
+  if (!useRefundedFees) {
+    return '';
+  }
+
+  const token = getHostTokenForRefundedFees(useRefundedFees);
+
+  if (token) {
+    return `\n  hostApiKey: '${token}',`;
+  }
+
+  return `\n  hostApiKey: 'Contact us to enable this feature!',`;
 }
 
 export function convertIntStringToWeiString(amount: string): string {
