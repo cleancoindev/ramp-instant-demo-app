@@ -106,6 +106,12 @@ const App: React.FC = () => {
           </p>
           <p className={styles.description}>This works best on desktop, but feel free to give it a go on mobile.</p>
 
+          <a href={process.env.REACT_APP_DOCS_URL} style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer nofollow">
+            <button className={styles.button} style={{ margin: '10px 0 0' }}>
+              Go to docs
+            </button>
+          </a>
+
           <section>
             <h2>Quick Integration</h2>
             <div className={styles.buttonContainer}>
@@ -203,7 +209,7 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 
+                {/*
                   ToDo uncomment after release sdk@2.0.0
                 <div className={styles.label}>
                   IFrame/Window:
