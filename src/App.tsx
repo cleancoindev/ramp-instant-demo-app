@@ -19,7 +19,7 @@ const App: React.FC = () => {
 
   const [useRefundedFees, setUseRefundedFees] = useState(false);
 
-  const [useNewWindow] = useState(false);
+  const [useNewWindow, setUseNewWindow] = useState(false);
 
   const token = getHostTokenForRefundedFees(useRefundedFees);
 
@@ -51,8 +51,7 @@ const App: React.FC = () => {
       swapAsset: asset,
       url: process.env.REACT_APP_URL,
       userAddress: address,
-      variant: 'auto',
-      // variant: useNewWindow ? 'hosted-auto' : 'auto',
+      variant: useNewWindow ? 'hosted-auto' : 'auto',
       userEmailAddress: emailAddress,
       hostApiKey: token || undefined,
     })
@@ -106,7 +105,12 @@ const App: React.FC = () => {
           </p>
           <p className={styles.description}>This works best on desktop, but feel free to give it a go on mobile.</p>
 
-          <a href={process.env.REACT_APP_DOCS_URL} style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer nofollow">
+          <a
+            href={process.env.REACT_APP_DOCS_URL}
+            style={{ textDecoration: 'none' }}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
             <button className={styles.button} style={{ margin: '10px 0 0' }}>
               Go to docs
             </button>
@@ -209,8 +213,6 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                {/*
-                  ToDo uncomment after release sdk@2.0.0
                 <div className={styles.label}>
                   IFrame/Window:
                   <div className={styles.assetRadioContainer}>
@@ -229,7 +231,7 @@ const App: React.FC = () => {
                       New Window
                     </label>
                   </div>
-                </div> */}
+                </div>
               </>
             ) : null}
 
