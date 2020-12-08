@@ -1262,10 +1262,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@ramp-network/ramp-instant-sdk@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@ramp-network/ramp-instant-sdk/-/ramp-instant-sdk-2.1.1.tgz#1c8b598576d54844ee97345104b49e66b107a585"
-  integrity sha512-30fqowgMrxrHnKLdxAZluR4JbkKWSnyIaGbrV6nzxGx5TcAY6eJ8MFBDVOl3anwwIcZFiGpwKSHt6PYVw3uZKg==
+"@ramp-network/ramp-instant-sdk@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@ramp-network/ramp-instant-sdk/-/ramp-instant-sdk-2.3.0.tgz#8a1367ae19deee5a2fc0077e3dbb09b9ee7bb337"
+  integrity sha512-aalsPmAa+N1SnmSZ1hvHryyBOPU6adwYkETCkSZiX6Lwv8Ux52Luz/JSs9jPuSA/iG2uJrhPUUn4/5P5krQRaw==
   dependencies:
     body-scroll-lock "^2.6.4"
 
@@ -2316,9 +2316,9 @@ body-parser@1.18.3:
     type-is "~1.6.16"
 
 body-scroll-lock@^2.6.4:
-  version "2.6.4"
-  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-2.6.4.tgz#567abc60ef4d656a79156781771398ef40462e94"
-  integrity sha512-NP08WsovlmxEoZP9pdlqrE+AhNaivlTrz9a0FF37BQsnOrpN48eNqivKkE7SYpM9N+YIPjsdVzfLAUQDBm6OQw==
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-2.7.1.tgz#caf3f9c91773af1ffb684cd66ed9137b5b737014"
+  integrity sha512-hS53SQ8RhM0e4DsQ3PKz6Gr2O7Kpdh59TWU98GHjaQznL7y4dFycEPk7pFQAikqBaUSCArkc5E3pe7CWIt2fZA==
 
 bonjour@^3.5.0:
   version "3.5.0"
