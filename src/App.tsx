@@ -19,6 +19,8 @@ const App: React.FC = () => {
 
   const [useRefundedFees, setUseRefundedFees] = useState(false);
 
+  const [finalUrl, setFinalUrl] = useState<string>('');
+
   const [useNewWindow, setUseNewWindow] = useState(false);
 
   const token = getHostTokenForRefundedFees(useRefundedFees);
@@ -54,6 +56,7 @@ const App: React.FC = () => {
       variant: useNewWindow ? 'hosted-auto' : 'auto',
       userEmailAddress: emailAddress,
       hostApiKey: token || undefined,
+      finalUrl: finalUrl && finalUrl.length ? finalUrl : undefined,
     })
       .on('*', console.log)
       .show();
@@ -151,6 +154,15 @@ const App: React.FC = () => {
                 className={styles.input}
                 value={amount}
                 onChange={(e) => setAmount((e.target as HTMLInputElement).value)}
+              />
+            </label>
+
+            <label className={styles.label}>
+              URL to redirect to after purchase:
+              <input
+                className={styles.input}
+                value={finalUrl}
+                onChange={(e) => setFinalUrl((e.target as HTMLInputElement).value)}
               />
             </label>
 
